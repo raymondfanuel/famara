@@ -43,6 +43,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 4px 6%;
+  background: rgb(193, 191, 191);
 }
 
 .nav-content img {
