@@ -1,0 +1,103 @@
+.nav-header {
+  background: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 6%;
+}
+.nav-header-left p {
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-header-left p:hover {
+  cursor: not-allowed;
+}
+
+.nav-header-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-header-right a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.nav-header-right a:hover{
+  color: red;
+  transition: 0.5s;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6%;
+}
+
+.nav-content img {
+  width: 120px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-links li:hover {
+  color: red;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  transition: 0.5s;
+}
+
+.nav-line {
+  display: none;
+}
+
+/* navbar responsiveness */
+
+@media (max-width:500px) {
+  .nav-header-left p{
+    font-size: 13px;
+  }
+
+  .nav-header-right a{
+    font-size: 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  .nav-line {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav-img{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+  }
+  .nav-img img {
+    width: 100px;
+  }
+}
