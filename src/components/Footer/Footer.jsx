@@ -44,9 +44,9 @@ const Footer = () => {
         ><FaYoutube /></a>
       </div>
       <div className="footer-right">
-        <p>Wasiala Nasi</p>
-        <p><MdEmail />EMAIL</p>
-        <p><FaPhone />CONTACT</p>
+        <p>Wasiliana Nasi</p>
+        <p className='mawasiliano'><MdEmail />famaraentertainmenttz@gmail.com</p>
+        <p className='mawasiliano'><FaPhone />+255 714 921 589</p>
       </div>
     </div>
   )

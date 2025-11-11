@@ -54,12 +54,12 @@ const Navbar = () => {
         </div>
         <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
           <NavLink to={'/'} className={'navlinks'}><li>NYUMBANI</li></NavLink>
-          <li>HABARI ZOTE</li>
-          <li>HABARI</li>
-          <li>SIASA</li>
+          <NavLink to={'/habariZote'} className={'navlinks'}><li>HABARI ZOTE</li></NavLink>
+          <NavLink to={'/habari'} className={'navlinks'}><li>HABARI</li></NavLink>
+          <NavLink to={'/siasa'} className={'navlinks'}><li>SIASA</li></NavLink>
           <NavLink to={'/michezo'} className={'navlinks'}><li>MICHEZO</li></NavLink>
-          <li>BURUDANI</li>
-          <li>ZAIDI</li>
+          <NavLink to={'/burudani'} className={'navlinks'}><li>BURUDANI</li></NavLink>
+          <NavLink to={'/zaidi'} className={'navlinks'}><li>ZAIDI</li></NavLink>
         </ul>
           
       </div>
