@@ -71,9 +71,8 @@
   display: none;
 }
 
-/* navbar responsiveness */
-
-@media (max-width:500px) {
+/* Toggle Menu Visibility */
+@media (max-width: 500px) {
   .nav-header-left p{
     font-size: 13px;
   }
@@ -82,14 +81,18 @@
     font-size: 16px;
   }
 
-  .nav-links {
-    display: none;
+  .nav-links li {
+    width: 100%;
+    padding-left: 50px;
+    color: white;
   }
+
   .nav-line {
     display: block;
     font-size: 20px;
     cursor: pointer;
   }
+  
   .nav-img{
     padding: 8px 0;
     display: flex;
@@ -97,7 +100,40 @@
     justify-content: center;
     gap: 90px;
   }
+
   .nav-img img {
     width: 100px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: black;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align:left;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 999;
+  }
+
+
+  .nav-links.show-menu {
+    display: flex;
+    animation: slideDown 0.5s ease-in-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

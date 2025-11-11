@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { IoCalendar } from "react-icons/io5";
 import { GrInstagram } from "react-icons/gr";
@@ -11,6 +11,7 @@ import { FaAlignLeft } from "react-icons/fa6";
 
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
   const today = new Date();
   const dateString = today.toDateString();
   return (
@@ -45,13 +46,13 @@ const Navbar = () => {
 
       <div className="nav-content">
         <div className="nav-img">
-        <div className="nav-line">
+        <div className="nav-line" onClick={()=>{setMenuOpen(!menuOpen)}}>
           <FaAlignLeft />
         </div>
         <img src={famara_logo} alt="famara media logo" />
 
         </div>
-        <ul className='nav-links'>
+        <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
           <li>NYUMBANI</li>
           <li>HABARI ZOTE</li>
           <li>HABARI</li>
