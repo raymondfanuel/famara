@@ -6,6 +6,7 @@
   align-items: center;
   width: 100%;
   padding: 8px 6%;
+  position: sticky;
 }
 .nav-header-left p {
   font-size: 15px;
@@ -39,7 +40,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 6%;
-  position: sticky;
 }
 
 .nav-content img {
