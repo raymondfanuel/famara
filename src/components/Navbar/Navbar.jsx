@@ -4,7 +4,6 @@ import { IoCalendar } from "react-icons/io5";
 import { GrInstagram } from "react-icons/gr";
 import { FaFacebookF } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
-import { TfiYoutube } from "react-icons/tfi";
 import { FaYoutube } from "react-icons/fa";
 import famara_logo from '../../assets/famara_logo.png'
 import { FaAlignLeft } from "react-icons/fa6";
@@ -52,10 +51,9 @@ const Navbar = () => {
           {menuOpen? <IoMdClose /> : <FaAlignLeft /> }
         </div>
         <img src={famara_logo} alt="famara media logo" />
-
         </div>
         <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
-          <li>NYUMBANI</li>
+          <NavLink to={'/'} className={'navlinks'}><li>NYUMBANI</li></NavLink>
           <li>HABARI ZOTE</li>
           <li>HABARI</li>
           <li>SIASA</li>

@@ -64,6 +64,7 @@
   color: red;
   text-decoration: underline;
   text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
   transition: 0.5s;
 }
 
@@ -79,7 +80,8 @@
 .navlinks.active {
   text-decoration: underline;
   text-underline-offset: 5px;
-  color: red;
+  text-decoration-thickness: 3px;
+  color: rgb(239, 59, 59);
 }
 
 /* Toggle Menu Visibility */

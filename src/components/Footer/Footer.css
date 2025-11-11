@@ -1,0 +1,66 @@
+.footer {
+  background-color: rgb(0, 0, 0);
+  padding: 50px 6%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left ul {
+  list-style: none;
+}
+
+.footer-left ul li {
+  font-size: 17px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.footer-left ul li:hover {
+  color: rgb(201, 3, 3);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  transition: all 0.3s ease;
+}
+
+.footer-left ul p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-between p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-between {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.footer-between a {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.footer-between a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.footer-between a:hover {
+  color: rgb(161, 5, 5);
+}
+
+/* responsiveness */
+
+@media (max-width:500px) {
+  .footer {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+}
