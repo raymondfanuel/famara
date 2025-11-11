@@ -67,6 +67,11 @@
   gap: 20px;
 }
 
+.footer-navs {
+  text-decoration: none;
+  color: white;
+}
+
 /* responsiveness */
 
 @media (max-width:500px) {

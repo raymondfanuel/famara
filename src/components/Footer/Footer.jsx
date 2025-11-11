@@ -6,6 +6,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -13,11 +14,11 @@ const Footer = () => {
       <div className="footer-left">
         <ul>
           <p>Habari Category</p>
-          <li>Habari Zote</li>
-          <li>Habari</li>
-          <li>Siasa</li>
-          <li>Michezo</li>
-          <li>Burudani</li>
+          <Link to={'/habariZote'} className='footer-navs'><li>Habari Zote</li></Link>
+          <Link to={'/habari'} className='footer-navs'><li>Habari</li></Link>
+          <Link to={'/siasa'} className='footer-navs'><li>Siasa</li></Link>
+          <Link to={'/michezo'} className='footer-navs'><li>Michezo</li></Link>
+          <Link to={'/burudani'} className='footer-navs'><li>Burudani</li></Link>    
         </ul>
       </div>
       <div className="footer-between">

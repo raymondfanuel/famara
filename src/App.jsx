@@ -9,6 +9,8 @@ import Siasa from './pages/Siasa/Siasa'
 import Burudani from './pages/Burudani/Burudani'
 import Zaidi from './pages/Zaidi/Zaidi'
 import Footer from './components/Footer/Footer'
+import DevFooter from './components/DevFooter/DevFooter'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 
 const App = () => {
   return (
@@ -22,8 +24,10 @@ const App = () => {
         <Route path='/siasa' element={<Siasa />}></Route>
         <Route path='/burudani' element={<Burudani />}></Route>
         <Route path='/zaidi' element={<Zaidi />}></Route>
+        <Route path='/privacyPolicy' element={<PrivacyPolicy />}></Route>
       </Routes>
       <Footer />
+      <DevFooter />
     </div>
   )
 }

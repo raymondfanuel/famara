@@ -53,7 +53,7 @@ const Navbar = () => {
         <div className="nav-line" onClick={()=>{setMenuOpen(!menuOpen)}}>
           {menuOpen? <IoMdClose /> : <FaAlignLeft /> }
         </div>
-        <img src={fmg_logo_bgx} alt="famara media logo" />
+        <Link to={'/'}><img src={fmg_logo_bgx} alt="famara media logo" /></Link>
         </div>
         <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
           <NavLink to={'/'} className={'navlinks'}><li>NYUMBANI</li></NavLink>
