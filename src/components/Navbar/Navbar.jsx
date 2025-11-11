@@ -6,6 +6,9 @@ import { FaFacebookF } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import famara_logo from '../../assets/famara_logo.png'
+import fmg_logo from '../../assets/fmg_logo.png'
+import fmgroup from '../../assets/fmgroup.png'
+import fmg_logo_bgx from '../../assets/fmg_logo_bgx.png'
 import { FaAlignLeft } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { Link,NavLink } from 'react-router-dom';
@@ -50,7 +53,7 @@ const Navbar = () => {
         <div className="nav-line" onClick={()=>{setMenuOpen(!menuOpen)}}>
           {menuOpen? <IoMdClose /> : <FaAlignLeft /> }
         </div>
-        <img src={famara_logo} alt="famara media logo" />
+        <img src={fmg_logo_bgx} alt="famara media logo" />
         </div>
         <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
           <NavLink to={'/'} className={'navlinks'}><li>NYUMBANI</li></NavLink>
