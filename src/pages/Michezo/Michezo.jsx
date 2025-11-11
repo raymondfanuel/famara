@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Home = () => {
+const Michezo = () => {
   return (
     <div>
-      
+      Michezo page
     </div>
   )
 }
 
-export default Home
+export default Michezo

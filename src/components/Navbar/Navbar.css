@@ -71,6 +71,17 @@
   display: none;
 }
 
+.navlinks {
+  text-decoration: none;
+  color: black;
+}
+
+.navlinks.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: red;
+}
+
 /* Toggle Menu Visibility */
 @media (max-width: 500px) {
   .nav-header-left p{

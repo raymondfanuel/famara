@@ -8,6 +8,8 @@ import { TfiYoutube } from "react-icons/tfi";
 import { FaYoutube } from "react-icons/fa";
 import famara_logo from '../../assets/famara_logo.png'
 import { FaAlignLeft } from "react-icons/fa6";
+import { IoMdClose } from "react-icons/io";
+import { Link,NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -22,22 +24,22 @@ const Navbar = () => {
         </div>
         <div className="nav-header-right">
           <a 
-            href="https://twitter.com" 
+            href="https://www.instagram.com/famaramedia?igsh=ZzJ0ZDRicnJjeW05" 
             target="_blank" 
             rel="noopener noreferrer"
           ><GrInstagram /></a>
           <a 
-            href="https://twitter.com" 
+            href="https://www.facebook.com/profile.php?id=100083006358894"
             target="_blank" 
             rel="noopener noreferrer"
           ><FaFacebookF /></a>
           <a 
-            href="https://twitter.com" 
+            href="https://x.com/FamaraMedia?s=09" 
             target="_blank" 
             rel="noopener noreferrer"
           ><BsTwitterX /></a>
           <a 
-            href="https://twitter.com" 
+            href="https://youtube.com/@famaramedia?si=RnLiZQpQLs-AC3Gh" 
             target="_blank" 
             rel="noopener noreferrer"
           ><FaYoutube /></a>
@@ -47,7 +49,7 @@ const Navbar = () => {
       <div className="nav-content">
         <div className="nav-img">
         <div className="nav-line" onClick={()=>{setMenuOpen(!menuOpen)}}>
-          <FaAlignLeft />
+          {menuOpen? <IoMdClose /> : <FaAlignLeft /> }
         </div>
         <img src={famara_logo} alt="famara media logo" />
 
@@ -57,7 +59,7 @@ const Navbar = () => {
           <li>HABARI ZOTE</li>
           <li>HABARI</li>
           <li>SIASA</li>
-          <li>MICHEZO</li>
+          <NavLink to={'/michezo'} className={'navlinks'}><li>MICHEZO</li></NavLink>
           <li>BURUDANI</li>
           <li>ZAIDI</li>
         </ul>
