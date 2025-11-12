@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Michezo from './pages/Michezo/Michezo'
@@ -8,15 +7,12 @@ import HabariZote from './pages/HabariZote/HabariZote'
 import Siasa from './pages/Siasa/Siasa'
 import Burudani from './pages/Burudani/Burudani'
 import Zaidi from './pages/Zaidi/Zaidi'
-import Footer from './components/Footer/Footer'
-import DevFooter from './components/DevFooter/DevFooter'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Login from './pages/Login/Login'
 
 const App = () => {
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/michezo' element={<Michezo />}></Route>
@@ -28,8 +24,6 @@ const App = () => {
         <Route path='/privacyPolicy' element={<PrivacyPolicy />}></Route>
         <Route path='/login' element={<Login />}></Route>
       </Routes>
-      <Footer />
-      <DevFooter />
     </div>
   )
 }
