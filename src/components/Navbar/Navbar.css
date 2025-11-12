@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 4px 6%;
-  background: rgb(193, 191, 191);
+  background: rgb(113, 113, 113);
 }
 
 .nav-content img {
@@ -100,12 +100,13 @@
 
   .nav-line {
     display: block;
+    color: #000000;
     font-size: 20px;
     cursor: pointer;
   }
   
   .nav-img{
-    padding: 4px 0;
+    padding: 1px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,7 +125,7 @@
     top: 100px;
     left: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align:left;
     align-items: flex-start;
     gap: 20px;
@@ -140,11 +141,11 @@
   @keyframes slideDown {
     from {
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateY(-10px);
     }
     to {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 }
