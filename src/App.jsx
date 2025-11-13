@@ -9,6 +9,7 @@ import Burudani from './pages/Burudani/Burudani'
 import Zaidi from './pages/Zaidi/Zaidi'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Login from './pages/Login/Login'
+import Signup from './pages/register/Signup'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/zaidi' element={<Zaidi />}></Route>
         <Route path='/privacyPolicy' element={<PrivacyPolicy />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<Signup/>}></Route>
       </Routes>
     </div>
   )
