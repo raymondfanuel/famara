@@ -1,0 +1,152 @@
+
+ .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  width: 100vw;
+  background: #1f293a;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+@supports not (height: 100dvh){
+  .body{
+    min-height: 100vh;
+  }
+}
+.container {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container span {
+  position: absolute;
+  left: 0;
+  width: 32px;
+  height: 6px;
+  background: #2c4766;
+  border-radius: 8px;
+  transform-origin: 128px;
+  transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+  animation: animateBlink 3s linear infinite;
+  animation-delay: calc(var(--i) * (3s / 50));
+}
+
+@keyframes animateBlink {
+  0% {
+    background: #0ef;
+  }
+  25% {
+    background: #2c4766;
+  }
+}
+.login_box {
+  position: absolute;
+  width: 400px;
+}
+.login_box form {
+  width: 100%;
+  padding: 0 50px;
+}
+.container h2 {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    align-items: center;
+    font-size: 2em;
+    color: #0ef;
+    text-align: center;
+}
+.container h2 img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+.input_box {
+  position: relative;
+  margin: 25px 0;
+}
+.input_box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #2c4766;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 20px;
+  transition: 0.5s ease;
+}
+.input_box input:focus,
+.input_box input:valid {
+  border-color: #0ef;
+}
+.input_box label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+.input_box input:focus ~ label,
+.input_box input:valid ~ label {
+  top: 1px;
+  font-size: 0.8em;
+  background: #1f293a;
+  padding: 0 6px;
+  color: #0ef;
+}
+.forgot_pass {
+  margin: -15px 0 10px;
+  text-align: center;
+}
+.forgot_pass a {
+  font-size: 0.85em;
+  color: #fff;
+  text-decoration: none;
+}
+.forgot_pass a:hover {
+  text-decoration: underline;
+}
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #0ef;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #1f293a;
+  font-weight: 600;
+}
+.signup_link {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+.signup_link a {
+  font-size: 1em;
+  color: #0ef;
+  text-decoration: none;
+  font-weight: 600;
+}
+.signup_link a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 556px) {
+  .body{
+    max-width: 550px;
+    padding: 0;
+  }
+}
