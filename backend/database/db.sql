@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2025 at 05:59 PM
+-- Generation Time: Nov 14, 2025 at 06:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,12 +40,14 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `post_id`, `file_name`, `content`, `position`) VALUES
-(27, 23, 'images_1762936643260images (15).jpeg', 'the image 1 odosakalska', 0),
-(28, 23, 'images_1762936643262images (18).jpeg', 'the image 2 odosakalska', 1),
-(29, 24, 'images_1762936757026images (15).jpeg', 'the image 1 odosakalska', 0),
-(30, 24, 'images_1762936757027images (18).jpeg', 'the image 2 odosakalska', 1),
-(31, 25, 'images_1762936777747images (15).jpeg', 'the image 1 odosakalska', 0),
-(32, 25, 'images_1762936777748images (18).jpeg', 'the image 2 odosakalska', 1);
+(42, 31, 'images_1763138157571cr7.jpg', 'the Greatest of all time cristiano ronaldo', 0),
+(43, 31, 'images_1763138157573ronaldo2.jpg', 'from 2003 to 2025 cr7 makes record', 1),
+(44, 32, 'images_1763138341438roman.jpg', 'The big Dog the best version of Roman reigns', 0),
+(45, 32, 'images_1763138341439roman2.jpg', 'The beast Brock lesnar feared him', 1),
+(46, 33, 'images_1763140078883ms_larney.jpg', 'the queen of the great Empire ', 0),
+(47, 33, 'images_1763140078884ms_larney2.jpg', 'persion in sports', 1),
+(48, 34, 'images_1763140146928ms_larney2.jpg', 'passion in sports games of basket ball ', 0),
+(49, 34, 'images_1763140146928ms_larney.jpg', 'mrs larney what a great na,e', 1);
 
 -- --------------------------------------------------------
 
@@ -66,9 +68,10 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `category`, `title`, `author`, `created_at`) VALUES
-(23, 'sports', 'Cristiano Ronaldo', 'decool', '2025-11-12 08:37:23'),
-(24, 'sports', 'Cristiano Ronaldo', 'decool', '2025-11-12 08:39:17'),
-(25, 'sports', 'Cristiano Ronaldo', 'decool', '2025-11-12 08:39:37');
+(31, 'sports', 'Cristiano Ronaldo', 'Decool', '2025-11-14 16:35:57'),
+(32, 'sports', 'Roman Reigns', 'Fitness', '2025-11-14 16:39:01'),
+(33, 'sports', 'Ms_larney', 'Kulet', '2025-11-14 17:07:58'),
+(34, 'sports', 'Ms_larney', 'Kulet', '2025-11-14 17:09:06');
 
 -- --------------------------------------------------------
 
@@ -125,13 +128,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
