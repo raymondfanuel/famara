@@ -7,11 +7,12 @@ const BlogList = ({ filterCategory }) => {
 
   useEffect(() => {
     setLoading(true) // show loading before fetching
-    fetch('http://localhost:5011/api/posts')
+    fetch('http://localhost:5001/posts')
       .then((res) => res.json())
       .then((data) => {
         setPosts(data)
         setLoading(false) // hide loading after data arrives
+        console.log(data)
       })
       .catch((err) => {
         console.error('Error fetching posts:', err)
@@ -36,15 +37,15 @@ const BlogList = ({ filterCategory }) => {
       ) : filteredPosts.length === 0 ? (
         <p>No posts found.</p>
       ) : (
-        filteredPosts.map((post) => (
-          <div key={post.id} className='blog-card'>
-            <h2>{post.title}</h2>
+        filteredPosts.map(({id, title, category, file_name, author, content}) => (
+          <div key={id} className='blog-card'>
+            <h2>{title}</h2>
             <div className='post-picture'>
-              <img src={post.images} alt={post.title} />
-              <p>{post.category}</p>
+              <img src={`http://localhost:5001/uploads/${file_name[0]}`} alt={title} />
+              <p>{category}</p>
             </div>
-            <p className='post-content'>{post.content}</p>
-            <p className='post-author'>{post.author}</p>
+            <p className='post-content'>{content[0]}</p>
+            <p className='post-author'>{author}</p>
           </div>
         ))
       )}
