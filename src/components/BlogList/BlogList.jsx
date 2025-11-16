@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './BlogList.css'
+import { server } from '../../port/server'
 
 const BlogList = ({ filterCategory }) => {
   const [posts, setPosts] = useState([])
@@ -7,7 +8,7 @@ const BlogList = ({ filterCategory }) => {
 
   useEffect(() => {
     setLoading(true) // show loading before fetching
-    fetch('http://localhost:5001/posts')
+    fetch(`${server}/posts`)
       .then((res) => res.json())
       .then((data) => {
         setPosts(data)

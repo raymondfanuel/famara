@@ -1,5 +1,6 @@
 import argon2  from 'argon2';
 import { connectdb } from '../database/db.js';
+import { redirect } from 'react-router-dom';
 
 let db = await connectdb();
 
@@ -8,7 +9,7 @@ export const verifyPassword = async (req, res, next)=>{
   
   const [rows] = await db.execute("select * from users where email =?", [email]);
 
-  if(rows.length === 0) return res.status(400).json({message: 'wrong Email or password'});
+  if(rows.length === 0) return res.status(400).json({message: 'wrong Email or password', success: false, redirectTo: "/login"});
     
   const user = rows[0];
 
@@ -17,7 +18,7 @@ export const verifyPassword = async (req, res, next)=>{
     next()
   }
   else{
-   return res.status(400).json({message: "wrong Email or Password"});
+   return res.status(400).json({message: "wrong Email or Password", success: false, redirectTo: "/login"});
   }
 
 

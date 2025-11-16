@@ -1,22 +1,33 @@
 import React from 'react'
 import  styles from "./Login.module.css";
 import { assets } from '../../assets/assets'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { server } from '../../port/server';
 
 const Login = () => {
+    const navigate = useNavigate();
 
    const handleSubmit = async (e)=>{
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        const res = await fetch("http://localhost:5001/login", {
+        const res = await fetch(`${server}/login`, {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
-            body: JSON.stringify(data)   });
-        const {message} = await res.json();
+            body: JSON.stringify(data),
+            credentials: "include",
+             });
+        const {success, redirectTo, message} = await res.json();
+        if(success){
+             navigate(redirectTo);
+        }
+       else{
         alert(message);
+       }
     }
+
+
 
 
 return(

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { assets } from '../../assets/assets'
 import styles from './Signup.module.css';
+import { server } from '../../port/server';
+import { Link } from 'react-router-dom';
 const Signup = () => {
 
 
@@ -9,7 +11,7 @@ const Signup = () => {
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        const res = await fetch("http://localhost:5001/signup", {
+        const res = await fetch(`${server}/signup`, {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(data)   });
@@ -37,7 +39,7 @@ return (
               </div>
               <button type="submit" className={styles.btn} >SignUp</button>
               <div className={styles.signup_link}>
-                <a href="#">Login</a>
+                <Link to='/login'>Login</Link>
               </div>
             </form>
           </div>

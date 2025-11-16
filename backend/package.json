@@ -13,9 +13,11 @@
   "description": "",
   "dependencies": {
     "argon2": "^0.44.0",
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dependences": "^0.0.1-security",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "mongoose": "^8.19.3",
     "moongose": "^1.0.0",
     "multer": "^2.0.2",
