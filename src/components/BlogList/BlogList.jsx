@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import './BlogList.css'
+import React, { useEffect, useState } from 'react';
+import './BlogList.css';
 
 const BlogList = ({ filterCategory }) => {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true) //new state for loading
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true) // show loading before fetching
-    fetch('http://localhost:5001/posts')
-      .then((res) => res.json())
-      .then((data) => {
-        setPosts(data)
-        setLoading(false) // hide loading after data arrives
-        console.log(data)
-      })
-      .catch((err) => {
-        console.error('Error fetching posts:', err)
-        setLoading(false)
-      })
-  }, [])
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch('http://localhost:5001/posts');
+        const data = await res.json();
+        setPosts(data);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching posts:', err);
+        setLoading(false);
+      }
+    };
 
-  // Filter posts if needed
+    fetchPosts();
+  }, []);
+
+  // Filter posts by category if filterCategory is provided
   const filteredPosts = filterCategory
-    ? posts.filter(post =>
-        post.title.toLowerCase().includes(filterCategory.toLowerCase())
-      )
-    : posts
+    ? posts.filter(post => post.category.toLowerCase() === filterCategory.toLowerCase())
+    : posts;
 
   return (
     <div className='blog-list'>
@@ -37,7 +37,7 @@ const BlogList = ({ filterCategory }) => {
       ) : filteredPosts.length === 0 ? (
         <p>No posts found.</p>
       ) : (
-        filteredPosts.map(({id, title, category, file_name, author, content}) => (
+        filteredPosts.map(({ id, title, category, file_name, author, content }) => (
           <div key={id} className='blog-card'>
             <h2>{title}</h2>
             <div className='post-picture'>
@@ -50,7 +50,7 @@ const BlogList = ({ filterCategory }) => {
         ))
       )}
     </div>
-  )
-}
+  );
+};
 
-export default BlogList
+export default BlogList;
