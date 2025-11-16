@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './BlogList.css';
+import { server } from '../../port/server';
 
 const BlogList = ({ filterCategory }) => {
   const [posts, setPosts] = useState([]);
@@ -9,7 +10,7 @@ const BlogList = ({ filterCategory }) => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const res = await fetch('http://localhost:5001/posts');
+        const res = await fetch(`${server}/posts`);
         const data = await res.json();
         setPosts(data);
         setLoading(false);
@@ -41,7 +42,7 @@ const BlogList = ({ filterCategory }) => {
           <div key={id} className='blog-card'>
             <h2>{title}</h2>
             <div className='post-picture'>
-              <img src={`http://localhost:5001/uploads/${file_name[0]}`} alt={title} />
+              <img src={`${server}/uploads/${file_name[0]}`} alt={title} />
               <p>{category}</p>
             </div>
             <p className='post-content'>{content[0]}</p>
