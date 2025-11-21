@@ -41,11 +41,10 @@ return ( <div className={styles.adminContainer}>
     <div className={styles.formGroup}>
       <label>Category</label>
       <select name="category">
-        <option value="sports">Michezo</option>
-        <option value="politics">Siasa</option>
-        <option value="business">Uchumi</option>
-
-
+        <option value="habari">Habari</option>
+        <option value="siasa">Siasa</option>
+        <option value="michezo">Michezo</option>
+        <option value="burudani">Burudani</option>
       </select>
     </div>
 
