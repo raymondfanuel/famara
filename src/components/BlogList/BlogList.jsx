@@ -98,7 +98,7 @@ const BlogList = ({ filterCategory }) => {
         <p>No posts found.</p>
       ) : (
         filteredPosts.map(({ id, title, created_at, file_name, author, content }, index) => (
-          <div key={id} className='blog-card' data-aos= "flip-up" >
+          <div key={id} className='blog-card' data-aos= "fade-in" >
             <div className='post-picture'>
               <img src={`${server}/uploads/${file_name[0]}`} alt={title} />
               <p>{timeAgo(created_at)}</p>

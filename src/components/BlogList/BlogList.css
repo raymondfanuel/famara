@@ -131,4 +131,12 @@ margin-right: 2%;
 
   width: 100%;
 }
+@media (max-width: 550px) {
+  .main-card img{
+    height: 178px;
+  }
+  .top{
+    height: 50vh;
+  }
+}
 
