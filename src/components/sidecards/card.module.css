@@ -1,0 +1,63 @@
+.side_cards{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-right: 0;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color:  lch(95.15% 0.01 296.81);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 600px;
+    padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    
+}
+.card .date{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+.cardContents{
+    display: flex;
+    gap: 2px;
+    width: 100%;
+}
+.cardContents img{
+    height: 110px;
+    width: 50%;
+    border-radius: 5px;
+}
+.cardContents .content{
+    width: 50%;
+    margin-left: 2px;
+}
+.cardContents .content p{
+    overflow-wrap: break-word;
+    width: 100%;
+    font-size: 12px;
+}
+
+.cardContents .content button{
+    background-color: rgb(126, 126, 210);
+border: none;
+cursor: pointer;
+padding: 5px;
+border-radius: 10px;
+margin-right: 2%;
+}
+
+@media (max-width: 918px) {
+    .side_cards{
+        display: none;
+    }
+}
