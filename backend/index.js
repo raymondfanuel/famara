@@ -91,6 +91,18 @@ app.post('/login', verifyPassword, (req, res)=>{
 
 //get values from backend
 app.get('/posts', async (req, res)=>{
+    const {id} = req.query;
+    if(id){
+    const [result] = await db.execute("select * from posts where id = ?", [id]);
+    result[0].file_name = [];
+    result[0].content= [];
+    const [images_rows] = await db.execute("select * from images where post_id = ? order by position asc", [id]);
+    for(let i = 0; i<images_rows.length; i++){
+        result[0].file_name.push(images_rows[i].file_name);
+        result[0].content.push(images_rows[i].content);
+    }
+        return res.json(result)
+    }
     let data = [];
     const [posts_rows] = await db.execute("select * from posts");
     if(posts_rows<0){
@@ -106,6 +118,7 @@ app.get('/posts', async (req, res)=>{
         data[i].content.push(images_rows[x].content);
      }
     }
+    console.log(data);
 
     res.json(data);
 

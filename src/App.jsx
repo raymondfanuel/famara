@@ -11,6 +11,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Login from './pages/Login/Login'
 import Signup from './pages/register/Signup'
 import Admin from './pages/Admin/admin'
+import Blog from './pages/blogpage/Blog'
 
 const App = () => {
   return (
@@ -27,6 +28,8 @@ const App = () => {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='admin' element={<Admin/>}/>
+        <Route path='/blog/:id' element={<Blog/>}/>
+
       </Routes>
     </div>
   )

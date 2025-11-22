@@ -5,8 +5,10 @@ import Card from '../sidecards/Card';
 import { Slider } from 'infinite-react-carousel';
 import Aos from 'aos';
 import "aos/dist/aos.css";
+import { useNavigate } from 'react-router-dom';
 
 const BlogList = ({ filterCategory }) => {
+  const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sideCards, setSidecards] = useState([]);
@@ -30,6 +32,10 @@ const BlogList = ({ filterCategory }) => {
     Aos.init({duration: 800, once: true});
 
   }, []);
+
+  const Blogreview = (id)=>{
+   navigate(`/blog/${id}`);
+  }
 
   // Filter posts by category if filterCategory is provided
   const filteredPosts = filterCategory
@@ -79,14 +85,14 @@ const BlogList = ({ filterCategory }) => {
             <div className='post-content'>
                <h2>{title}</h2>
              <p> {content[0].slice(0, 50)}... </p>
-              <div> <button>see more...</button></div>
+              <div> <button onClick={()=> Blogreview(id)}>see more...</button></div>
             </div>
         </div>
         ))
        
       )}
         </Slider>
-      <Card posts = {sideCards} timeAgo={timeAgo}/>
+      <Card posts = {sideCards} timeAgo={timeAgo} Blogreview = {Blogreview}/>
       </div>
        <div className='blog-list'>
       {loading ? (
@@ -106,7 +112,7 @@ const BlogList = ({ filterCategory }) => {
             <div className='post-content'>
                <h2>{title}</h2>
              <p> {content[0].slice(0, 50)}... </p>
-              <div> <button>see more...</button></div>
+              <div> <button onClick={()=>Blogreview(id)}>see more...</button></div>
             </div>
           </div>
         ))
