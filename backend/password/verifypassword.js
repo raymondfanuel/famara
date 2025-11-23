@@ -1,6 +1,5 @@
 import argon2  from 'argon2';
 import { connectdb } from '../database/db.js';
-import { redirect } from 'react-router-dom';
 
 let db = await connectdb();
 
