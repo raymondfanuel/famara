@@ -1,1 +1,1 @@
-export const server = "https://fmg-backend-production.up.railway.app";
+export const server = "http://localhost:5001";

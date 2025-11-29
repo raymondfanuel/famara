@@ -3,6 +3,7 @@ import { assets } from '../../assets/assets'
 import styles from './Signup.module.css';
 import { server } from '../../port/server';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 const Signup = () => {
 
 
@@ -15,8 +16,15 @@ const Signup = () => {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(data)   });
-        const {message} = await res.json();
-        alert(message);
+        const {message, status} = await res.json();
+        if(status === "success"){
+          toast.success(message)
+        }
+        else{
+          toast.error(message);
+        }
+      
+        e.target.reset();
     }
 
 return (

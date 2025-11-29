@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./admin.module.css";
+import { Outlet, Link } from "react-router-dom";
 import {
-  FaApple,
+  FaBlog,
   FaHouse,
-  FaCompass,
+  FaUpload,
   FaChartSimple,
   FaMessage,
   FaFolder,
@@ -13,11 +14,15 @@ import {
   FaDoorOpen,
   FaBars
 } from "react-icons/fa6";
-import AdminPostForm from "../../components/Adminpost/AdminPostForm";
 import { assets } from "../../assets/assets";
 import { server } from "../../port/server";
 import { useNavigate } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
+const MySwal = withReactContent(Swal);
 
 export default function Admin() {
   const navigate = useNavigate();
@@ -48,11 +53,11 @@ export default function Admin() {
     })
   }
   const menuItems = [
-    { icon: <FaHouse />, label: "Home" },
-    { icon: <FaCompass />, label: "Explore" },
-    { icon: <FaChartSimple />, label: "Analytics" },
-    { icon: <FaMessage />, label: "Message" },
-    { icon: <FaFolder />, label: "Projects" },
+    { icon: <FaHouse />, label: "Home", link: "/admin" },
+    { icon: <FaUpload />, label: "Upload", link: "/admin/upload" },
+    { icon: <FaChartSimple />, label: "Analytics", link: "/admin/Analytics" },
+    { icon: <FaMessage />, label: "Message", link: "/admin/Message" },
+    { icon: <FaFolder />, label: "Projects", link: "/admin/projects" },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -71,18 +76,19 @@ export default function Admin() {
         <nav className={styles.menu}>
           <ul>
             {menuItems.map((item, index) => (
-              <li
+              <li onClick={()=>setActiveIndex(index)}
                 key={index}
                 className={activeIndex === index ? styles.active : ""}
-                onClick={() => setActiveIndex(index)}
               >
-                <a href="#">
+                <Link to ={item.link} >
                   {item.icon}
                   <span>{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
-            <li onClick={logOut}><a href="#"><FaSignOutAlt className={styles.logout}/><span className={styles.logout}
+             <li onClick={()=>{navigate('/')}}><a ><FaBlog /><span
+            >Blogs Page</span></a></li>
+            <li onClick={logOut}><a ><FaSignOutAlt className={styles.logout}/><span className={styles.logout}
             >Logout</span></a></li>
           </ul>
         </nav>
@@ -101,10 +107,11 @@ export default function Admin() {
       {/* Main Content */}
       <main className={styles.content}>
         <header className={styles.header}>
-          <h1 className={styles.h1}>Welcome Back {username.toUpperCase()}</h1>
+          <h1 className={styles.h1}>Welcome Back Decool</h1>
           <p>Check out your project statistics for today</p>
         </header>
-         <AdminPostForm/>
+      <Outlet/>
+        
       </main>
     </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
  import styles from "./AdminPostForm.module.css";
 import { server } from "../../port/server";
+import { toast } from "react-toastify";
 
 export default function AdminPostForm() {
 
@@ -20,8 +21,9 @@ const form = e.target;
   const formData = new FormData(form); 
   
  const res =  await axios.post(`${server}/form`, formData, {"content-type" : "multipart/form-data"});
-  
-alert(res.data.message)
+   form.reset();
+  setImages([{ caption: "" }]);
+toast.success(res.data.message)
 
 };
 
@@ -30,12 +32,12 @@ return ( <div className={styles.adminContainer}>
 
 <div className={styles.formGroup}>
       <label>Title</label>
-      <input type="text" name="title" />
+      <input type="text" name="title" required/>
     </div>
 
     <div className={styles.formGroup}>
       <label>Author</label>
-      <input type="text" name="author" />
+      <input type="text" name="author" required />
     </div>
 
     <div className={styles.formGroup}>
@@ -54,10 +56,10 @@ return ( <div className={styles.adminContainer}>
       {images.map((img, index) => (
         <div key={index} className={styles.imageBlock}>
           <label>Upload Image {index + 1}</label>
-          <input type="file" name="images" />
+          <input type="file" name="images" required/>
 
           <label>content</label>
-          <textarea name="content"></textarea>
+          <textarea name="content" required></textarea>
         </div>
       ))}
 

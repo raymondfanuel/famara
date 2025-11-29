@@ -6,7 +6,8 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container{
@@ -177,6 +178,7 @@ mix-blend-mode: darken;
     border-radius: 16px;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0);
     transition: box-shadow 0.3s ease;
+    pointer-events: none;
 }
 
 .menu li:hover::after{

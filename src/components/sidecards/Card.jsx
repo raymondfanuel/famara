@@ -12,7 +12,7 @@ const Card = ({posts, timeAgo, Blogreview}) => {
             <div className={styles.cardContents}>
             <img src={`${server}/uploads/${file_name[0]}`} alt="img" />
             <div className={styles.content}>
-                <p>{content}...</p>
+                <p>{content[0].slice(0,70)}...</p>
                 <button onClick={()=>{Blogreview(id)}}>See more..</button>
             </div>
             </div>

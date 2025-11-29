@@ -3,6 +3,7 @@ import  styles from "./Login.module.css";
 import { assets } from '../../assets/assets'
 import { Link, useNavigate } from 'react-router-dom';
 import { server } from '../../port/server';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Login = () => {
              navigate(redirectTo);
         }
        else{
-        alert(message);
+        toast.error(message);
        }
     }
 
