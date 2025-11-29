@@ -18,7 +18,7 @@ const upload = multer({
     storage,
     });
 const app = express();
-app.use(cors({origin: "http://localhost:5173", credentials: true}));
+app.use(cors({origin: "https://fmg-clone-ray-hsti.vercel.app", credentials: true}));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(upload.array('images'))
@@ -118,7 +118,6 @@ app.get('/posts', async (req, res)=>{
         data[i].content.push(images_rows[x].content);
      }
     }
-    console.log(data);
 
     res.json(data);
 

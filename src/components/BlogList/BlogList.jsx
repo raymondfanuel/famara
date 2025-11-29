@@ -67,31 +67,23 @@ const BlogList = ({ filterCategory }) => {
     
     <div className='blog-top'>
       <div className='top'>
-        <Slider className='slider' autoplay infinite>
-{loading ? (
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-          <p>Loading posts...</p>
+      {!loading && filteredPosts.length > 0 && (
+  <Slider className='slider' autoplay infinite>
+    {posts.map(({title, content, created_at, file_name, author, id }) => (
+      <div className='main-card' key={id}>
+        <div className='post-picture'>
+          <img src={`${server}/uploads/${file_name[0]}`} alt={title} />
+          <p>{timeAgo(created_at)}</p>
         </div>
-      ) : filteredPosts.length === 0 ? (
-        <p>No posts found.</p>
-      ) : (
-        posts.slice(0, 5).map(({title, content, created_at, file_name, author, id })=>(
-           <div className='main-card'>
-           <div className='post-picture'>
-              <img src={`${server}/uploads/${file_name[0]}`} alt={title} />
-              <p>{timeAgo(created_at)}</p>
-            </div>
-            <div className='post-content'>
-               <h2>{title}</h2>
-             <p> {content[0].slice(0, 50)}... </p>
-              <div> <button onClick={()=> Blogreview(id)}>see more...</button></div>
-            </div>
+        <div className='post-content'>
+          <h2>{title}</h2>
+          <p>{content[0]}...</p>
+          <button onClick={() => Blogreview(id)}>see more...</button>
         </div>
-        ))
-       
-      )}
-        </Slider>
+      </div>
+    ))}
+  </Slider>
+)}
       <Card posts = {sideCards} timeAgo={timeAgo} Blogreview = {Blogreview}/>
       </div>
        <div className='blog-list'>
@@ -111,7 +103,7 @@ const BlogList = ({ filterCategory }) => {
             </div>
             <div className='post-content'>
                <h2>{title}</h2>
-             <p> {content[0].slice(0, 50)}... </p>
+             <p> {content[0]}... </p>
               <div> <button onClick={()=>Blogreview(id)}>see more...</button></div>
             </div>
           </div>
